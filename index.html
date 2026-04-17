@@ -39,6 +39,28 @@
     .nav-links a { color: #666; transition: color 0.3s; }
     .nav-links a:hover { color: #2c5f2d; }
 
+    /* ハンバーガーボタン（モバイルのみ表示） */
+    .hamburger {
+      display: none;
+      background: none; border: 0;
+      width: 44px; height: 44px;
+      padding: 0; cursor: pointer;
+    }
+    .hamburger-line {
+      display: block; width: 24px; height: 2px;
+      background: #2c5f2d; margin: 6px auto;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
     /* ===== ヘッダー（ヒーロー） ===== */
     .hero {
       min-height: 100vh;
@@ -81,8 +103,17 @@
       margin-bottom: 12px;
     }
     .section-subtitle {
-      font-size: 14px; color: #999; margin-bottom: 40px;
+      font-size: 14px; color: #666; margin-bottom: 40px;
     }
+
+    /* ===== スキップリンク（キーボード利用者向け） ===== */
+    .skip-link {
+      position: absolute; top: -40px; left: 0;
+      background: #2c5f2d; color: #fff;
+      padding: 8px 16px; z-index: 200;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
 
     /* ===== ストーリー ===== */
     .story p { margin-bottom: 20px; font-size: 15px; line-height: 2; }
@@ -224,35 +255,69 @@
       .hero-name { font-size: 20px; }
       .numbers { grid-template-columns: repeat(2, 1fr); }
       .business-cards { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+
+      .hamburger { display: block; }
+      .nav-links {
+        position: fixed; top: 53px; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: rgba(255,255,255,0.98);
+        padding: 8px 24px 16px;
+        border-bottom: 1px solid #eee;
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.25s, opacity 0.25s;
+      }
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .nav-links a {
+        padding: 14px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 16px;
+      }
+      .nav-links a:last-child { border-bottom: 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ナビゲーション -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="nav-logo">原田良太</div>
-      <div class="nav-links">
-        <a href="#story">ストーリー</a>
-        <a href="#business">事業紹介</a>
-        <a href="#lectures">講演・研修</a>
-        <a href="#media">メディア</a>
-        <a href="#contact">お問い合わせ</a>
-      </div>
-    </div>
-  </nav>
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
-  <!-- ヘッダー -->
+  <!-- ヘッダー（ナビゲーション） -->
+  <header>
+    <nav class="nav" aria-label="グローバルナビゲーション">
+      <div class="nav-inner">
+        <div class="nav-logo">原田良太</div>
+        <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="メニューを開く">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#story">ストーリー</a>
+          <a href="#business">事業紹介</a>
+          <a href="#lectures">講演・研修</a>
+          <a href="#media">メディア</a>
+          <a href="#contact">お問い合わせ</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+  <!-- ヒーロー -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-image">
-        <img src="images/profile-main.jpg" alt="原田良太">
+        <img src="images/profile-main.jpg" alt="原田良太の顔写真（スーツ姿）">
       </div>
       <div class="hero-text">
         <p class="hero-catchcopy">必要な場所を、<br>自分たちの手で。</p>
-        <p class="hero-name">原田 良太（はらだ りょうた）</p>
+        <h1 class="hero-name">原田 良太（はらだ りょうた）</h1>
         <div class="hero-title">
           社会福祉法人 宮共生会 理事長<br>
           Hi key person! 会長
@@ -438,12 +503,12 @@
 
       <!-- 動画 -->
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/2Of_YaXj8nk" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/2Of_YaXj8nk" title="動画：かれこれ先生のこどもクリニック ～開設への想いと保護者の声～" allowfullscreen></iframe>
       </div>
       <p class="video-caption">かれこれ先生のこどもクリニック ～開設への想いと保護者の声～</p>
 
       <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/Bz5A5_jZZ1A" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Bz5A5_jZZ1A" title="動画：社会福祉法人宮共生会 紹介" allowfullscreen></iframe>
       </div>
       <p class="video-caption">社会福祉法人宮共生会 紹介</p>
 
@@ -487,10 +552,33 @@
     </div>
   </section>
 
+  </main>
+
   <!-- フッター -->
   <footer class="footer">
     <p>&copy; 2026 原田良太 / 社会福祉法人 宮共生会</p>
   </footer>
+
+  <script>
+    (function() {
+      const btn = document.querySelector('.hamburger');
+      const menu = document.getElementById('nav-links');
+      if (!btn || !menu) return;
+      function close() {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'メニューを開く');
+        menu.classList.remove('open');
+      }
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.setAttribute('aria-label', expanded ? 'メニューを開く' : 'メニューを閉じる');
+        menu.classList.toggle('open', !expanded);
+      });
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
 
 </body>
 </html>
