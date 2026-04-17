@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原田良太 | 社会福祉法人 宮共生会 理事長</title>
+  <meta name="description" content="社会福祉法人宮共生会 理事長 原田良太のポートフォリオ。障害福祉・農福連携・医療的ケア・地域活性化に取り組んでいます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== リセット・基本設定 ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.8;
+      background: #fff;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== ナビゲーション ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid #eee;
+    }
+    .nav-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 24px;
+    }
+    .nav-logo { font-weight: 700; font-size: 16px; color: #2c5f2d; }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; }
+    .nav-links a { color: #666; transition: color 0.3s; }
+    .nav-links a:hover { color: #2c5f2d; }
+
+    /* ===== ヘッダー（ヒーロー） ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(135deg, #f8faf8 0%, #eef4ee 100%);
+    }
+    .hero-inner {
+      max-width: 1000px; width: 100%;
+      display: flex; align-items: center; gap: 60px;
+    }
+    .hero-image {
+      flex-shrink: 0; width: 320px;
+    }
+    .hero-image img {
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    .hero-text { flex: 1; }
+    .hero-catchcopy {
+      font-size: 32px; font-weight: 700; color: #2c5f2d;
+      line-height: 1.5; margin-bottom: 20px;
+    }
+    .hero-name {
+      font-size: 24px; font-weight: 500; margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 15px; color: #666; margin-bottom: 24px; line-height: 1.6;
+    }
+    .hero-intro {
+      font-size: 15px; color: #555; line-height: 2;
+    }
+
+    /* ===== セクション共通 ===== */
+    .section { padding: 80px 24px; }
+    .section:nth-child(even) { background: #f9faf9; }
+    .section-inner { max-width: 800px; margin: 0 auto; }
+    .section-title {
+      font-size: 24px; font-weight: 700; color: #2c5f2d;
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      font-size: 14px; color: #999; margin-bottom: 40px;
+    }
+
+    /* ===== ストーリー ===== */
+    .story p { margin-bottom: 20px; font-size: 15px; line-height: 2; }
+    .story-highlight {
+      background: #f0f7f0;
+      border-left: 4px solid #2c5f2d;
+      padding: 20px 24px;
+      margin: 30px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .story-highlight p { margin-bottom: 0; font-weight: 500; color: #2c5f2d; }
+
+    /* ===== 数字で見る ===== */
+    .numbers {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+      margin-bottom: 40px;
+    }
+    .number-card {
+      text-align: center; padding: 24px 16px;
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .number-value {
+      font-size: 36px; font-weight: 700; color: #2c5f2d;
+    }
+    .number-unit { font-size: 14px; color: #2c5f2d; }
+    .number-label { font-size: 13px; color: #888; margin-top: 8px; }
+
+    /* ===== 事業カード ===== */
+    .business-cards {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .business-card {
+      background: #fff; border-radius: 12px; padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-top: 4px solid #2c5f2d;
+    }
+    .business-card h3 {
+      font-size: 18px; font-weight: 700; color: #2c5f2d; margin-bottom: 12px;
+    }
+    .business-card p { font-size: 14px; color: #666; line-height: 1.8; }
+
+    /* ===== 講演テーマ ===== */
+    .lecture-themes {
+      display: flex; flex-direction: column; gap: 20px;
+      margin-bottom: 40px;
+    }
+    .lecture-theme {
+      background: #fff; border-radius: 12px; padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .lecture-theme h3 {
+      font-size: 16px; font-weight: 700; margin-bottom: 8px;
+    }
+    .lecture-theme p { font-size: 14px; color: #666; }
+    .lecture-history {
+      font-size: 14px; color: #888; margin-top: 24px;
+    }
+    .lecture-list {
+      font-size: 13px; color: #888; line-height: 2;
+      list-style: none; padding: 0;
+    }
+    .lecture-list li::before {
+      content: ""; display: inline-block;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #2c5f2d; margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    /* ===== 動画 ===== */
+    .video-container {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      border-radius: 12px; overflow: hidden; margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      border: 0;
+    }
+    .video-caption { font-size: 14px; color: #888; margin-bottom: 32px; }
+
+    /* ===== メディア ===== */
+    .media-links {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .media-link {
+      display: flex; align-items: center; gap: 16px;
+      background: #fff; padding: 20px 24px; border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .media-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .media-link-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: #2c5f2d; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .media-link-text h3 { font-size: 15px; font-weight: 500; }
+    .media-link-text p { font-size: 13px; color: #888; }
+
+    /* ===== お問い合わせ ===== */
+    .contact-section {
+      text-align: center;
+      background: linear-gradient(135deg, #2c5f2d 0%, #3a7a3b 100%);
+      color: #fff;
+    }
+    .contact-section .section-title { color: #fff; }
+    .contact-section .section-subtitle { color: rgba(255,255,255,0.7); }
+    .contact-text { font-size: 15px; margin-bottom: 30px; opacity: 0.9; }
+    .contact-button {
+      display: inline-block;
+      padding: 16px 48px;
+      background: #fff; color: #2c5f2d;
+      border-radius: 50px;
+      font-size: 16px; font-weight: 700;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ===== フッター ===== */
+    .footer {
+      text-align: center; padding: 32px 24px;
+      font-size: 13px; color: #aaa;
+      background: #1a3a1a;
+    }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 768px) {
+      .hero-inner { flex-direction: column; gap: 32px; text-align: center; }
+      .hero-image { width: 240px; margin: 0 auto; }
+      .hero-catchcopy { font-size: 24px; }
+      .hero-name { font-size: 20px; }
+      .numbers { grid-template-columns: repeat(2, 1fr); }
+      .business-cards { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">原田良太</div>
+      <div class="nav-links">
+        <a href="#story">ストーリー</a>
+        <a href="#business">事業紹介</a>
+        <a href="#lectures">講演・研修</a>
+        <a href="#media">メディア</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ヘッダー -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-image">
+        <img src="images/profile-main.jpg" alt="原田良太">
+      </div>
+      <div class="hero-text">
+        <p class="hero-catchcopy">必要な場所を、<br>自分たちの手で。</p>
+        <p class="hero-name">原田 良太（はらだ りょうた）</p>
+        <div class="hero-title">
+          社会福祉法人 宮共生会 理事長<br>
+          Hi key person! 代表
+        </div>
+        <p class="hero-intro">
+          長崎県佐世保市を拠点に、障害のある方の就労支援・生活支援・医療的ケアから
+          地域活性化まで、「必要な場所がないなら自分たちで作る」という信念で
+          事業を展開しています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ストーリー -->
+  <section class="section" id="story">
+    <div class="section-inner">
+      <h2 class="section-title">ストーリー</h2>
+      <p class="section-subtitle">Story</p>
+      <div class="story">
+        <p>
+          1978年、佐世保市と川棚町の境目にある宮地区に生まれました。
+          中学校卒業後に佐世保高専へ進学するも中退。
+          その後、和食の板前を目指して福岡へ出るも1年で挫折。
+          カラオケ屋の店長、瓦職人、居酒屋のアルバイト——
+          20代前半まで、さまざまな仕事を転々としてきました。
+        </p>
+        <p>
+          転機となったのは、父が福祉事業を立ち上げたこと。
+          2001年、社会福祉法人宮共生会に入職。
+          2002年に職員8名、利用者20名で「わらびの里」をスタートしました。
+        </p>
+        <div class="story-highlight">
+          <p>「父の息子だからではなく、自分でしっかり体制を整える」</p>
+        </div>
+        <p>
+          その想いを胸に、事務長、事務局長を経て、2017年に理事長に就任。
+          現在は15事業所で23事業を展開し、約200名の職員とともに
+          障害のある方の暮らしを支えています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 数字で見る宮共生会 -->
+  <section class="section" id="numbers">
+    <div class="section-inner">
+      <h2 class="section-title">数字で見る宮共生会</h2>
+      <p class="section-subtitle">Numbers</p>
+      <div class="numbers">
+        <div class="number-card">
+          <div><span class="number-value">24</span><span class="number-unit">年</span></div>
+          <div class="number-label">事業の歩み</div>
+        </div>
+        <div class="number-card">
+          <div><span class="number-value">23</span><span class="number-unit">事業</span></div>
+          <div class="number-label">展開事業数</div>
+        </div>
+        <div class="number-card">
+          <div><span class="number-value">197</span><span class="number-unit">名</span></div>
+          <div class="number-label">職員数</div>
+        </div>
+        <div class="number-card">
+          <div><span class="number-value">15</span><span class="number-unit">拠点</span></div>
+          <div class="number-label">事業所数</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事業紹介 -->
+  <section class="section" id="business">
+    <div class="section-inner">
+      <h2 class="section-title">事業の4つの柱</h2>
+      <p class="section-subtitle">Business</p>
+      <div class="business-cards">
+        <div class="business-card">
+          <h3>就労支援</h3>
+          <p>
+            障害のある方が仕事を通して社会とつながり、
+            役割を持って働くことで幸せになれる環境づくり。
+            平均工賃5万円、売上2億円を目標に挑戦中。
+          </p>
+        </div>
+        <div class="business-card">
+          <h3>農福連携</h3>
+          <p>
+            農業と福祉の連携による六次産業化。
+            野菜やコメの生産・加工から、カフェ「ハーベストキッチン」での
+            接客、お弁当製造まで展開。
+          </p>
+        </div>
+        <div class="business-card">
+          <h3>医療的ケア</h3>
+          <p>
+            2025年4月、「かれこれ先生のこどもクリニック」を開設。
+            県北圏域初の医療的ケア児のためのショートステイ
+            「かれこれ先生のおうち」も併設。
+          </p>
+        </div>
+        <div class="business-card">
+          <h3>地域活性化</h3>
+          <p>
+            早岐地区の活性化を目指す「Hi key person!」代表。
+            地域のキーパーソンを発掘・つなげ、
+            補助金に頼らない持続可能なビジネスを創出。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 講演・研修 -->
+  <section class="section" id="lectures">
+    <div class="section-inner">
+      <h2 class="section-title">講演・研修テーマ</h2>
+      <p class="section-subtitle">Lectures</p>
+      <div class="lecture-themes">
+        <div class="lecture-theme">
+          <h3>障害のある方のライフステージ全般を支える支援実践</h3>
+          <p>障害福祉の制度や歴史から、就労支援の現場実践まで。
+             特別支援学校の教員・生徒や福祉関係者向けの研修で最も多く登壇しているテーマです。</p>
+        </div>
+        <div class="lecture-theme">
+          <h3>農福連携 ～新しい仕事を模索する中で見つけた可能性～</h3>
+          <p>農業と福祉の連携による新しいビジネスモデル。
+             六次産業化の実践と、障害のある方の工賃向上への取り組みを紹介します。</p>
+        </div>
+        <div class="lecture-theme">
+          <h3>多世代共生の街づくりへの挑戦</h3>
+          <p>スマートウェルネス整備事業やハイキーパーソンの活動を通じた地域づくり。
+             福祉法人だからこそできる地域貢献の形を語ります。</p>
+        </div>
+        <div class="lecture-theme">
+          <h3>優しさと強さで人を生かす ～委ねる組織経営の実践～</h3>
+          <p>8名から200名規模の組織に成長させた経営の実践。
+             職員に委ね、任せることで組織を強くする経営手法についてお話しします。</p>
+        </div>
+      </div>
+
+      <div class="lecture-history">
+        <p style="font-weight:700; color:#333; margin-bottom:12px;">主な登壇先</p>
+        <ul class="lecture-list">
+          <li>宮崎県中小企業家同友会 宮崎北支部 例会（2025）</li>
+          <li>長崎県立特別支援学校 初任者研修（2023〜2025、毎年）</li>
+          <li>知的障がい関係合同研修会（2024）</li>
+          <li>佐賀県身体障害者団体連合会 視察（2024）</li>
+          <li>長崎県農福連携研修会（2021）</li>
+          <li>佐世保東ロータリークラブ 卓話・職場見学（2021, 2023）</li>
+          <li>倫理法人会 講演</li>
+          <li>中小企業家同友会 佐世保支部 例会（2018）</li>
+          <li>長崎県障害福祉課 視察対応（2022）</li>
+          <li>虹の原特別支援学校壱岐分校 障害者雇用推進セミナー</li>
+        </ul>
+        <p style="margin-top:12px; font-size:13px; color:#aaa;">ほか多数。講演・研修のご依頼はお気軽にお問い合わせください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINCC -->
+  <section class="section" id="sincc">
+    <div class="section-inner">
+      <h2 class="section-title">SINCC ～自主企画イベント～</h2>
+      <p class="section-subtitle">Self-produced Event</p>
+      <div class="story">
+        <p>
+          SINCCは宮共生会が主催する講演イベントシリーズです。
+          法人の取り組みを広く発信するとともに、地域の方々や保護者の声を直接聞く場として開催しています。
+        </p>
+        <p>
+          テーマに応じて外部の専門家を招き、参加者と共に考える双方向型のイベント。
+          かれこれ先生のこどもクリニック開設前には、先進事例のドクターをお招きし、
+          保護者の声を集めたことが事業化のきっかけにもなりました。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- メディア・動画 -->
+  <section class="section" id="media">
+    <div class="section-inner">
+      <h2 class="section-title">メディア掲載・動画</h2>
+      <p class="section-subtitle">Media</p>
+
+      <!-- 動画 -->
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/2Of_YaXj8nk" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">かれこれ先生のこどもクリニック ～開設への想いと保護者の声～</p>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Bz5A5_jZZ1A" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">社会福祉法人宮共生会 紹介</p>
+
+      <!-- 記事リンク -->
+      <div class="media-links">
+        <a href="https://kujiranohige.com/person/14357/" target="_blank" class="media-link">
+          <div class="media-link-icon">人</div>
+          <div class="media-link-text">
+            <h3>くじらのひげ「ひと」</h3>
+            <p>原田良太のプロフィール記事</p>
+          </div>
+        </a>
+        <a href="https://kujiranohige.com/info/14426/" target="_blank" class="media-link">
+          <div class="media-link-icon">事</div>
+          <div class="media-link-text">
+            <h3>くじらのひげ「こと」</h3>
+            <p>宮共生会の取り組みとハイキーパーソン</p>
+          </div>
+        </a>
+        <a href="https://kujiranohige.com/shop/14418/" target="_blank" class="media-link">
+          <div class="media-link-icon">所</div>
+          <div class="media-link-text">
+            <h3>くじらのひげ「みせ」</h3>
+            <p>宮共生会の施設紹介</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">お問い合わせ</h2>
+      <p class="section-subtitle">Contact</p>
+      <p class="contact-text">
+        講演・研修のご依頼、視察のご相談、取材のお問い合わせなど<br>
+        お気軽にご連絡ください。
+      </p>
+      <a href="mailto:harada@miyakyoseikai.or.jp" class="contact-button">メールで問い合わせる</a>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <p>&copy; 2026 原田良太 / 社会福祉法人 宮共生会</p>
+  </footer>
+
+</body>
+</html>

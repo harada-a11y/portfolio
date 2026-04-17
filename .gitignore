@@ -1,0 +1,22 @@
+# 公開しないファイル
+
+# 編集用データファイル（手元でのみ管理）
+site-data.md
+jigyosho-data.md
+
+# 講演資料フォルダ（PPTX/PDF原本は公開しない）
+lectures/
+
+# 画像候補（profile-main.jpg 以外は未使用）
+images/*.JPEG
+images/profile-arms.jpg
+images/profile-casual.jpg
+images/profile-serious.jpg
+images/profile-side.jpg
+images/profile-smile.jpg
+
+# OS/エディタの作業ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
