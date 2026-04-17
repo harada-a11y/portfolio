@@ -226,18 +226,32 @@
     }
     .contact-section .section-title { color: #fff; }
     .contact-section .section-subtitle { color: rgba(255,255,255,0.7); }
-    .contact-text { font-size: 15px; margin-bottom: 30px; opacity: 0.9; }
-    .contact-button {
-      display: inline-block;
-      padding: 16px 48px;
-      background: #fff; color: #2c5f2d;
-      border-radius: 50px;
-      font-size: 16px; font-weight: 700;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .contact-text { font-size: 15px; margin-bottom: 24px; opacity: 0.9; }
+    .contact-form-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
     }
-    .contact-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    .contact-form-wrapper iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+      min-height: 1500px;
+    }
+    .contact-fallback {
+      margin-top: 24px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+    .contact-fallback a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    @media (max-width: 640px) {
+      .contact-form-wrapper iframe { min-height: 1850px; }
     }
 
     /* ===== フッター ===== */
@@ -546,9 +560,19 @@
       <p class="section-subtitle">Contact</p>
       <p class="contact-text">
         講演・研修のご依頼、視察のご相談、取材のお問い合わせなど<br>
-        お気軽にご連絡ください。
+        下記フォームよりお気軽にご連絡ください。
       </p>
-      <a href="mailto:harada@miyakyoseikai.or.jp" class="contact-button">メールで問い合わせる</a>
+      <div class="contact-form-wrapper">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe1QbeSSTqvdirUgCdwLOYreJiPtVHiZyXC0ppjcb4MBoVODw/viewform?embedded=true"
+          title="お問い合わせフォーム"
+          loading="lazy">
+          読み込んでいます…
+        </iframe>
+      </div>
+      <p class="contact-fallback">
+        フォームがうまく送信できない場合は <a href="mailto:info@harada-ryota.com">info@harada-ryota.com</a> までご連絡ください。
+      </p>
     </div>
   </section>
 
