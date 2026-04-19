@@ -6,8 +6,7 @@
   <title>原田良太 | 社会福祉法人 宮共生会 理事長</title>
   <meta name="description" content="社会福祉法人宮共生会 理事長 原田良太のポートフォリオ。障害福祉・農福連携・医療的ケア・地域活性化に取り組んでいます。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     /* ===== リセット・基本設定 ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -62,94 +61,37 @@
       transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* ===== ヘッダー（ヒーロー）- エディトリアル / モノクロ ===== */
+    /* ===== ヘッダー（ヒーロー） ===== */
     .hero {
       min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      padding: 120px 32px 80px;
-      background: #fafafa;
-      position: relative;
-      overflow: hidden;
-    }
-    /* 編集的デコレーション：ナンバリング */
-    .hero-number {
-      position: absolute;
-      top: 96px; left: 48px;
-      font-family: 'Noto Serif JP', serif;
-      font-size: 11px; letter-spacing: 4px;
-      color: #2c5f2d;
-      font-weight: 500;
-    }
-    /* サイド縦書きラベル */
-    .hero-side-label {
-      position: absolute;
-      top: 50%; right: 32px;
-      transform: translateY(-50%);
-      writing-mode: vertical-rl;
-      font-size: 10px; letter-spacing: 6px;
-      color: #999;
-      font-weight: 500;
+      padding: 80px 24px 60px;
+      background: linear-gradient(135deg, #f8faf8 0%, #eef4ee 100%);
     }
     .hero-inner {
-      max-width: 1100px; width: 100%;
-      display: grid;
-      grid-template-columns: 5fr 7fr;
-      gap: 72px;
-      align-items: center;
+      max-width: 1000px; width: 100%;
+      display: flex; align-items: center; gap: 60px;
     }
     .hero-image {
-      position: relative;
+      flex-shrink: 0; width: 320px;
     }
     .hero-image img {
-      width: 100%;
-      border-radius: 2px;
-      filter: grayscale(100%) contrast(1.05);
-      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     }
-    .hero-text { }
-    .hero-eyebrow {
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: #2c5f2d;
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
+    .hero-text { flex: 1; }
     .hero-catchcopy {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 52px;
-      font-weight: 700;
-      color: #1a1a1a;
-      line-height: 1.45;
-      letter-spacing: 0.02em;
-      margin-bottom: 44px;
+      font-size: 32px; font-weight: 700; color: #2c5f2d;
+      line-height: 1.5; margin-bottom: 20px;
     }
     .hero-name {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 20px;
-      font-weight: 500;
-      color: #1a1a1a;
-      margin-bottom: 20px;
-      padding-top: 24px;
-      border-top: 1px solid #ccc;
+      font-size: 24px; font-weight: 500; margin-bottom: 8px;
     }
-    .hero-name-en {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: #888;
-      margin-top: 8px;
-      font-weight: 400;
+    .hero-title {
+      font-size: 15px; color: #666; margin-bottom: 24px; line-height: 1.6;
     }
     .hero-intro {
-      font-size: 14px;
-      color: #555;
-      line-height: 2;
-      margin-bottom: 16px;
-    }
-    .hero-subrole {
-      font-size: 12px;
-      color: #888;
-      letter-spacing: 1.5px;
+      font-size: 15px; color: #555; line-height: 2;
     }
 
     /* ===== セクション共通 ===== */
@@ -321,16 +263,10 @@
 
     /* ===== レスポンシブ ===== */
     @media (max-width: 768px) {
-      .hero { padding: 100px 24px 56px; }
-      .hero-number { top: 72px; left: 24px; letter-spacing: 3px; }
-      .hero-side-label { display: none; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-image { max-width: 280px; margin: 0 auto; }
-      .hero-eyebrow { font-size: 11px; letter-spacing: 2.5px; margin-bottom: 20px; }
-      .hero-catchcopy { font-size: 34px; line-height: 1.5; margin-bottom: 32px; }
-      .hero-name { font-size: 18px; padding-top: 20px; }
-      .hero-name-en { font-size: 10px; }
-      .hero-intro { font-size: 13px; }
+      .hero-inner { flex-direction: column; gap: 32px; text-align: center; }
+      .hero-image { width: 240px; margin: 0 auto; }
+      .hero-catchcopy { font-size: 24px; }
+      .hero-name { font-size: 20px; }
       .numbers { grid-template-columns: repeat(2, 1fr); }
       .business-cards { grid-template-columns: 1fr; }
 
@@ -389,25 +325,22 @@
 
   <!-- ヒーロー -->
   <section class="hero">
-    <span class="hero-number" aria-hidden="true">01 — PORTRAIT</span>
-    <span class="hero-side-label" aria-hidden="true">RYOTA HARADA / PORTFOLIO 2026</span>
     <div class="hero-inner">
       <div class="hero-image">
         <img src="images/profile-main.jpg" alt="原田良太の顔写真（スーツ姿）">
       </div>
       <div class="hero-text">
-        <p class="hero-eyebrow">社会福祉法人 宮共生会 理事長</p>
         <p class="hero-catchcopy">必要な場所を、<br>自分たちの手で。</p>
-        <h1 class="hero-name">
-          原田 良太
-          <span class="hero-name-en">RYOTA HARADA</span>
-        </h1>
+        <h1 class="hero-name">原田 良太（はらだ りょうた）</h1>
+        <div class="hero-title">
+          社会福祉法人 宮共生会 理事長<br>
+          Hi key person! 会長
+        </div>
         <p class="hero-intro">
           長崎県佐世保市を拠点に、障害のある方の就労支援・生活支援・医療的ケアから
           地域活性化まで、「必要な場所がないなら自分たちで作る」という信念で
           事業を展開しています。
         </p>
-        <p class="hero-subrole">Hi key person! 会長</p>
       </div>
     </div>
   </section>
